@@ -1,5 +1,5 @@
 
-def info(messgae){
+def info(message){
  echo "INFO: ${message}"
 }
 
