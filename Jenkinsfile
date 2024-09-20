@@ -1,21 +1,30 @@
-//@Library('my-shared-library') _
- pipeline {
+pipeline{
     agent any
-    stages {
-        stage('Build') {
-    }
+    stages{
+        stage('Checkout'){
+            steps{
+                echo 'Checkout'
+            }            
         }
- // Your build steps here
-            steps {
-                script {
-                }
+        stage('Build'){
+            steps{
+                echo 'Build'
+            } 
+        }
+        stage('Test'){
+            steps{
+                echo 'Test'
             }
-    post {
-        always {
-            script {
- // Call the shared library function to set the build status
+        }    
+    }
+    post{
+        always{
+            script{
+                
+             // Call the shared library function to set the build status
                 setBuildStatus()
             }
         }
+        }
     }
- }
+
